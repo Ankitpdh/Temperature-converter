@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Temperature Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #converter {
+      margin: 20px auto;
+      width: 300px;
+      text-align: center;
+    }
+
+    #result {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Temperature Converter</h1>
+  <div id="converter">
+    <label for="celsius">Celsius:</label>
+    <input type="text" id="celsius">
+    <br>
+    <button onclick="convert()">Convert</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function convert() {
+      var celsiusInput = document.getElementById('celsius');
+      var celsius = parseFloat(celsiusInput.value);
+      var fahrenheit = (celsius * 9 / 5) + 32;
+      var resultDiv = document.getElementById('result');
+      resultDiv.textContent = celsius + " degrees Celsius is equal to " + fahrenheit.toFixed(2) + " degrees Fahrenheit.";
+    }
+  </script>
+</body>
+
+</html>
